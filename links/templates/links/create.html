@@ -1,12 +1,14 @@
 {% extends 'links/_base.html' %}
 
-
+{% load tailwind_filters %}
 {% block content %}
 
-<form action="" method="post">
+<form action="" method="post" class="bg-white p-6 rounded-lg shadow-md flex flex-col gap-4">
     {% csrf_token %}
-    <input type="text"></input>
-    <input type="submit" value="Create"></input>
+    {{ form|crispy }}
+    <div class="mt-4 flex justify-end">
+        <input type="submit" value="Create" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer">
+    </div>
 </form>
 
 {% endblock content %}

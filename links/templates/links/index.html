@@ -3,8 +3,8 @@
 {% block title %}Link List{% endblock title %}
 
 {% block content %}
-    <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <ul class="divide-y divide-gray-200">
+    <div class="max-w-3xl mx-auto bg-white flex flex-col items-center shadow-md rounded-lg p-6">
+        <ul class="divide-y divide-gray-200 self-stretch">
             {% for link in links %}
                 <li class="py-4 flex justify-between items-center">
                     <div>
@@ -19,5 +19,8 @@
                 <li class="text-gray-500 text-center py-4">No links available.</li>
             {% endfor %}
         </ul>
-    </div>
+        <button class="p-2 bg-indigo-500  text-white rounded"> 
+            <a class="list-none" href="{% url 'create-link'  %}">Add link +</a>
+        </button>
+    </div>  
 {% endblock content %}
